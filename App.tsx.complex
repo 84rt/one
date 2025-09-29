@@ -1,0 +1,53 @@
+import React from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import { Provider as PaperProvider } from 'react-native-paper';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+export default function App() {
+  return (
+    <PaperProvider>
+      <SafeAreaProvider>
+        <View style={styles.container}>
+          <Text style={styles.title}>🎯 Habit Tracker</Text>
+          <Text style={styles.subtitle}>Offline-First Habit Tracking</Text>
+          <Text style={styles.status}>✅ App is running!</Text>
+          <Text style={styles.next}>Next: Configure Supabase and database</Text>
+        </View>
+        <StatusBar style="auto" />
+      </SafeAreaProvider>
+    </PaperProvider>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f5f5f5',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+  },
+  title: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    marginBottom: 8,
+    color: '#3B82F6',
+  },
+  subtitle: {
+    fontSize: 18,
+    color: '#666',
+    marginBottom: 32,
+    textAlign: 'center',
+  },
+  status: {
+    fontSize: 16,
+    color: '#10B981',
+    marginBottom: 8,
+  },
+  next: {
+    fontSize: 14,
+    color: '#F59E0B',
+    textAlign: 'center',
+  },
+});
